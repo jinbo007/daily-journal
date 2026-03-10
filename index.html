@@ -444,6 +444,15 @@
                 transform: rotate(90deg);
             }
         }
+        /* 响应式优化 */
+        @media (max-width: 640px) {
+            h1 { font-size: 2rem; }
+            .philosophy-diagram { flex-direction: column; }
+            .arrow { transform: rotate(90deg); }
+        }
+        @media (max-width: 480px) {
+            .timeline-item { padding: 1rem; margin-bottom: 1.5rem; }
+        }
     </style>
 </head>
 <body>
