@@ -164,13 +164,26 @@
         .philosophy-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
         }
 
         .philosophy-label {
             font-size: 1.2rem;
             font-weight: 600;
-            color: var(--accent);
+            color: var(--neon-cyan);
             margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         .philosophy-desc {
