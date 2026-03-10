@@ -14,22 +14,58 @@
         }
 
         :root {
-            --bg: #0a0a0b;
-            --bg-card: #141416;
-            --bg-hover: #1a1a1d;
+            /* 霓虹色系 */
+            --neon-cyan: #00ffff;
+            --neon-magenta: #ff00ff;
+            --neon-yellow: #ffff00;
+            --neon-green: #00ff00;
+
+            /* 深色背景 */
+            --bg: #0a0a0f;
+            --bg-card: #141420;
+            --bg-hover: #1a1a2e;
+            --bg-glass: rgba(255, 255, 255, 0.05);
+
+            /* 文字 */
             --text: #e4e4e7;
             --text-muted: #71717a;
             --border: #27272a;
-            --accent: #10b981;
-            --accent-secondary: #06b6d4;
-            --gradient: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+
+            /* 主色调 */
+            --accent: #00ffff;
+            --accent-secondary: #ff00ff;
+            --accent-tertiary: #ffff00;
+
+            /* 渐变 */
+            --gradient-neon: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
+            --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+
+            /* 发光效果 */
+            --glow-cyan: 0 0 20px rgba(0, 255, 255, 0.5);
+            --glow-magenta: 0 0 20px rgba(255, 0, 255, 0.5);
         }
 
         body {
             font-family: 'Noto Sans SC', sans-serif;
-            background: var(--bg);
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
             color: var(--text);
             line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(255, 0, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
         }
 
         .container {
