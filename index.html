@@ -86,10 +86,20 @@
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            background: var(--gradient);
+            background: var(--gradient-neon);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: neonGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes neonGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+            }
+            50% {
+                filter: drop-shadow(0 0 20px rgba(255, 0, 255, 0.8));
+            }
         }
 
         .subtitle {
